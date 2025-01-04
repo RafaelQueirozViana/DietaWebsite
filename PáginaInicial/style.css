@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
+:root {
+    /* Espaçamentos */
+    --site-spacing: 2rem;
+
+    /* Cores */
+    --purple-color: #7864e4;
+    --green-color: rgba(14, 182, 14, 0.995);
+    --dark-black: #191c21;
+    
+}
+
+
+body {
+    font-family: "Poppins", serif;
+}
+
+
+ul,li,a {
+    text-decoration: none;
+    list-style: none;
+}
+
+
+
+
+.website-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    
+    background-color: var(--dark-black);
+}
+
+
+/*Início Formatações gerais */
+
+.material-symbols-outlined {
+    color: rgb(91, 90, 90);
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 2.8rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+
+p{
+font-size: 22px;
+color: rgb(197, 197, 197);
+}
+
+.purple-text {
+color: var(--purple-color);
+
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+
+/*Fim Formatações gerais */
+
+
+
+/* <!-- <Começo menu lateral de navegação> --> */
+
+.website-container .lateral-menu {
+    position: sticky;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    width: 300px;
+    height: 100vh;
+    padding: 1rem;
+    padding-top: 2.5rem;
+    padding-left: var(--site-spacing);
+  
+}
+
+.website-container .lateral-menu .top {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.website-container .lateral-menu .bottom {
+    position: absolute;
+    bottom: 30px;
+    margin-top: 30px;
+}
+
+.website-container .lateral-menu p{
+    color: rgb(150, 151, 161);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.lateral-menu  .material-symbols-outlined {
+    font-size: 35px;
+    color: rgb(150, 151, 161);
+    transition: all .3s ease;
+}
+
+
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all .3s ease;
+    height: 50px;
+
+}
+
+.nav-content.selected {
+    transform: translateX(-5px) !important;
+    border-left: 5px solid var(--purple-color);
+    padding-left: 10px;
+    border-radius: 4px;
+}
+
+.nav-content.selected span, .nav-content.selected p {
+    color: var(--purple-color);
+}
+
+
+.nav-content:hover {
+    transform: translateX(20px);
+  
+}
+
+.nav-content:hover span, .nav-content:hover p{
+    color: var(--purple-color);
+}
+
+.lateral-menu .diet-management #date-text {
+    font-size: 30px;
+   
+}
+
+
+.calendary-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-top: 10px;
+
+  
+}
+
+.calendary-content {
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+
+}
+
+
+
+.calendary-content p:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    transition: .3s all ease;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.calendary-content p:nth-child(2):hover {
+    background-color: #27282a;
+
+}
+
+
+.today-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--purple-color);
+    width: 30px;
+    height: 30px;
+
+
+
+}
+
+
+/* <!-- <Fim menu lateral de navegação> --> */
+
+
+
+/* <!-- <Começo telas de gerenciar dieta > --> */
+
+.uis-container {
+    width: calc(100% );
+    background-color: rgb(23, 25, 29);
+    background: linear-gradient(15deg #060606, rgb(23, 25, 29));
+    padding: 2.5rem 4rem;
+    padding-right: var(--site-spacing);
+ 
+    
+}
+
+/* <!-- <Começo telas de controlar calorias  > --> */
+
+
+.manage-calories-ui {
+    width: 100%;
+
+}
+
+.diet-management, .manage-calories-ui .text-box {
+    height: 200px;
+}
+
+#da3 {
+    margin-top: 10px;
+    color: #9f9f9f;
+}
+
+
+.consumo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-black);
+    border-radius: 10px;
+    padding: 2rem 2rem;
+    padding-bottom: 2.5rem;
+    margin-top: 30px;
+    display: none;
+}
+
+.consumo-container .edit-diet {
+    color: var(--purple-color);
+    cursor: pointer;
+  
+    padding: .2rem 1rem;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 20px;
+    transition: all .3s ease;
+    }
+
+.consumo-container .edit-diet:hover {
+    background-color: #5e17ea;
+    }
+
+.statistics  {
+    display: flex;
+    width: max-content;
+
+}
+
+
+
+
+.statistics .paragraph {
+    color: rgb(150, 151, 161);
+    font-size: 28px;
+  
+    }
+    
+.statistics .cal-info {
+    position: relative;
+    margin-left: 10px;
+  
+ 
+    }
+    
+.statistics .cal-info:before{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    border-radius: 10px;
+    width: 100%;
+    height: 4px;
+    background-color: #a9a9a915;
+    }
+    
+.statistics .cal-info::after{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    border-radius: 10px;
+    width: 50%;
+    height: 4px;
+    background-color: var(--purple-color)
+
+    }
+
+.graphics-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 50%;
+    border-radius: 10px;
+  
+    
+
+
+}
+
+.graphic-content {
+    display: flex;
+    background-color: var(--dark-black);
+    padding: 2rem;
+    border-radius: 10px;
+    gap: 20px;
+    align-items: center;
+    height: max-content;
+    width: calc(100% / 3 - 40px);
+    min-width: max-content;
+ 
+   
+}
+
+.graphic-content .circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 6px solid var(--purple-color);
+   
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 20px;
+
+
+}
+
+.button-container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    padding: .2rem 1.5rem;
+    border-radius: 50px;
+    transition: all .3s ease;
+    color: #ffffff;
+    height: 40px;
+    background-color: #5e17ea;
+   
+ 
+  
+}
+
+/* <!-- <Fim telas de controlar calorias  > --> */
+
+
+
+
+
+/* <!-- < Comeco Tela Adicionar Refeições á dieta > --> */
+
+.meal-ui {
+    width: 100%;
+}
+
+.meal-ui .meal-content{
+    display: f;
+    height: 100%;
+}
+
+#ad {
+    font-size: 35px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    margin-top: 60px;
+}
+
+.meal-container {
+display: flex;
+margin-top: 30px;
+flex-direction: column;
+gap: 20px;
+width: max-content;
+background-color: #5e17ea;
+}
+
+.meal-container .meal-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 535px;
+    background-color: var(--dark-black);
+    border-radius: 10px;
+    padding: 1.5rem 1.5rem;
+    position: relative;
+
+ 
+}
+
+.meal-card img {
+    height: 70px;
+}
+
+.percentage-bar {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background-color: #2f2e32;
+    border-radius: 50px;
+    margin-top: 5px;
+}
+
+.more {
+    
+    width: 63px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #23262b;
+    transition: all .3s ease;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.more:hover {
+    background-color: #4612ae
+}
+
+.Kcal-text,
+.hour-text {
+    color: #8a8a8a;
+    font-size: 20px;
+}
+
+.percentage-bar .current-percentage {
+    width: 50%;
+    height: 5px;
+    border-radius: 50px;
+    background-color: #5e17ea;
+}
+
+.meal-ui .text-box {
+    width: 100%;
+}
+
+
+.meal-ui .text-box .flex {
+
+justify-content: space-between;
+width: 100%;
+}
+
+.graphic-container {
+    width: 100%;
+    height: 100%;
+    background-color: #716687;
+}
+
+
+/* <!-- < Fim Tela Adicionar Refeições á dieta > --> */
+
+/* <!-- <Fim telas de gerenciar dieta > --> */
+
+
+
+
+
+@media(min-width:2442px) {
+    .diet-management, .manage-calories-ui .text-box {
+        height: 150px;
+    }
+}
+
+@media(max-height:800px) {
+    .website-container .lateral-menu .bottom {
+        position: initial;
+   
+        
+    }
+}
+
+
+
+
+
+
+/* <!-- <Fim Main principal do site> --> */
