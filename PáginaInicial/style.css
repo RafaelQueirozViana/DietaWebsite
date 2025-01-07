@@ -75,6 +75,34 @@ color: var(--purple-color);
 }
 
 
+
+/*Gráficos*/
+
+/*Gráfico de pizza*/
+
+.pizza-graphic {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 6px solid var(--purple-color);
+   
+}
+
+
+/*Gráfico de coluna*/
+.column-graphic {
+  
+    background-color: #4612ae;
+    width: 20px;
+    height: 100%;
+    padding: .5rem;
+    border-radius: 3px;
+}
+
+
+
+
 /*Fim Formatações gerais */
 
 
@@ -88,7 +116,8 @@ color: var(--purple-color);
     overflow-y: auto;
     overflow-x: hidden;
 
-    width: 300px;
+    width: 15%;
+    min-width: 250px;
     height: 100vh;
     padding: 1rem;
     padding-top: 2.5rem;
@@ -328,7 +357,7 @@ color: var(--purple-color);
 
 }
 
-.graphic-content {
+.manage-calories-ui .graphic-content {
     display: flex;
     background-color: var(--dark-black);
     padding: 2rem;
@@ -342,14 +371,8 @@ color: var(--purple-color);
    
 }
 
-.graphic-content .circle {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 6px solid var(--purple-color);
-   
-}
+
+
 
 .button-container {
     display: flex;
@@ -387,12 +410,20 @@ color: var(--purple-color);
 /* <!-- < Comeco Tela Adicionar Refeições á dieta > --> */
 
 .meal-ui {
+ 
     width: 100%;
+    height: max-content;
+    min-height: 100vh;
+
+ 
+ 
 }
 
 .meal-ui .meal-content{
-    display: f;
+    display: flex;
+    gap: 50px;
     height: 100%;
+   
 }
 
 #ad {
@@ -402,16 +433,16 @@ color: var(--purple-color);
     margin-top: 60px;
 }
 
-.meal-container {
-display: flex;
-margin-top: 30px;
-flex-direction: column;
-gap: 20px;
-width: max-content;
-background-color: #5e17ea;
+.cards-container {
+    display: flex;
+
+    flex-direction: column;
+    gap: 20px;
+    width: max-content;
+
 }
 
-.meal-container .meal-card {
+.cards-container .meal-card {
     display: flex;
     align-items: center;
     gap: 30px;
@@ -438,8 +469,7 @@ background-color: #5e17ea;
 }
 
 .more {
-    
-    width: 63px;
+    width: 47px;
     height: 40px;
     border-radius: 50%;
     background-color: #23262b;
@@ -469,8 +499,17 @@ background-color: #5e17ea;
     background-color: #5e17ea;
 }
 
+
+
 .meal-ui .text-box {
     width: 100%;
+}
+
+.meal-ui .right-display {
+min-width: 200px;
+width: 50vw;
+max-width: 900px;
+
 }
 
 
@@ -480,11 +519,92 @@ justify-content: space-between;
 width: 100%;
 }
 
-.graphic-container {
-    width: 100%;
-    height: 100%;
-    background-color: #716687;
+
+ 
+.meal-ui .graphic-container {
+    display: flex;
+    gap: 50px;
+
+
+   overflow-x: scroll;
+    overflow-y: hidden;
+
 }
+
+.meal-ui .graphic-container::-webkit-scrollbar {
+    display: none; /* Esconde a barra de rolagem em navegadores baseados no WebKit */
+}
+
+/* Alternativa para navegadores compatíveis com scrollbar-width */
+.meal-ui .graphic-container {
+    scrollbar-width: none; /* Esconde a barra de rolagem no Firefox */
+}
+
+.meal-ui .graphic-content {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    height: 350px;
+    width: 500px;
+    gap: 5px;
+
+
+   
+}
+
+.meal-ui .graphic-content .flex {
+    height: 100%;
+    
+    width: 120px;
+    align-items: end;
+    justify-content: center;
+}
+
+#dad {
+    height: 220px;
+    background-color: #7864e4;
+}
+
+#as {
+    background-color: #1e66ea;
+    height: 240px;
+}
+
+
+
+.statistics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-left: 40px;
+  margin-top: 50px;
+}
+
+.statistics-container p {
+    position: relative;
+}
+
+.statistics-container p::before {
+    content: '';
+    position: absolute;
+    background-color: #4612ae;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.statistics-container p:nth-child(2)::before {
+background-color: #1e66ea;
+}
+
+.statistics-container p:nth-child(3)::before {
+    background-color: #7864e4;
+    }
+
 
 
 /* <!-- < Fim Tela Adicionar Refeições á dieta > --> */
